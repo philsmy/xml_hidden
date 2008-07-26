@@ -1,0 +1,22 @@
+XmlHidden
+=========
+
+Introduction goes here.
+
+hide attributes from being included in an xml output from every instance.
+I didn't want to have to remember to use the same :except call everywhere.
+
+Caveat: This works by overriding a serialization method. It is possible that it 
+will affect other code that serializes out objects. It triggers on any serializer with xml
+in its class name...
+
+Example
+=======
+
+class Foo < ActiveRecord::Base
+
+	attr_xml_hidden :id # id will not be part of the xml out
+end
+
+
+Copyright (c) 2008 Phil Smy, released under the MIT license
